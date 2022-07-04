@@ -1,12 +1,12 @@
 import React from "react";
-import "./Quiz.css";
+import "./ActiveQuiz.css";
 
 const ActiveQuiz = props => (
     <div className={'ActiveQuiz'}>
         <p>
             <span>
-                <strong>2</strong>
-                Как дела ?
+                <strong>Вопрос 2</strong>
+                Как дела?
             </span>
         </p>
 
