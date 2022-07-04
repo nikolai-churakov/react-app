@@ -2,10 +2,13 @@ import React, {Component} from "react";
 import "./Quiz.css";
 
 class Quiz extends Component {
+    state = {
+        quiz: []
+    }
     render() {
         return (
             <div className={'Quiz'}>
-                <h1>Question1</h1>
+                <h1>Quiz</h1>
             </div>
         )
     }
