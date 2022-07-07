@@ -4,7 +4,7 @@ import "./AnswerItem.css"
 const AnswerItem = props => {
     return (
         <li className={'AnswerItem'}>
-            {props.answers.text}
+            {props.answer.text}
         </li>
     )
 }
