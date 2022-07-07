@@ -3,9 +3,11 @@ import "./AnswerList.css";
 
 const AnswerList = props => (
     <ul className={'AnswerList'}>
-        {props.answers.pam}
-    </ul>
+        {props.answers.map((answer, index) => {
 
+        })
+        }
+    </ul>
 )
 
 export default AnswerList
