@@ -5,8 +5,7 @@ const ActiveQuiz = props => (
     <div className={'ActiveQuiz'}>
         <p>
             <span>
-                <strong>Вопрос 2</strong>
-                Как дела?
+                <strong>Вопрос 2.</strong>  Как дела?
             </span>
         </p>
 
