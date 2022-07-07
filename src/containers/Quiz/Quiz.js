@@ -14,8 +14,8 @@ class Quiz extends Component {
     render() {
         return (
             <div className={'Quiz'}>
-                <h1>Quiz</h1>
                 <div className={'QuizWrapper'}>
+                    <h1>Quiz</h1>
                     <ActiveQuiz/>
                 </div>
             </div>
