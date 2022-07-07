@@ -3,10 +3,12 @@ import "./ActiveQuiz.css";
 
 const ActiveQuiz = props => (
     <div className={'ActiveQuiz'}>
-        <p>
+        <p className={'Question'}>
             <span>
-                <strong>Вопрос 2.</strong>  Как дела?
+                <strong>Вопрос 2.</strong>&nbsp;
+                Как дела?
             </span>
+            <small> 4 из 12 </small>
         </p>
 
         <ul>
