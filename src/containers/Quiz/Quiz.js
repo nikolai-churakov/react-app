@@ -33,6 +33,10 @@ class Quiz extends Component {
 
     onAnswerClickHandler = answerId => {
         console.log('Answer Id', answerId)
+
+        this.setState({
+            activeQuestion: this.state.activeQuestion + 1
+        })
     }
     render() {
         return (
