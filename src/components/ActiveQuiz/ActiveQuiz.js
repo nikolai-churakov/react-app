@@ -14,6 +14,7 @@ const ActiveQuiz = props => (
 
        <AnswerList
        answers={props.answers}
+       onAnswerClickHandler={props.omAnswerClick}
        />
     </div>
 )
