@@ -2,7 +2,6 @@ import React from "react"
 import "./AnswerItem.css"
 
 const AnswerItem = props => {
-    console.log(props)
     return (
         <li
             className={'AnswerItem'}
