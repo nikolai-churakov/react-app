@@ -34,9 +34,22 @@ class Quiz extends Component {
     onAnswerClickHandler = answerId => {
         console.log('Answer Id', answerId)
 
-        this.setState({
-            activeQuestion: this.state.activeQuestion + 1
-        })
+        const question = this.state.quiz[this.state.activeQuestion]
+
+        if (question.rightAnswerId === answerId) {
+
+            const timeout = window.setTimeout( () => {
+                window.clearTimeout(timeout)
+            }, 1000)
+            this.setState({
+                activeQuestion: this.state.activeQuestion + 1
+            })
+
+        } else {
+
+        }
+
+
     }
     render() {
         return (
@@ -44,8 +57,8 @@ class Quiz extends Component {
                 <div className={'QuizWrapper'}>
                     <h1>Ответьте на все вопросы</h1>
                     <ActiveQuiz
-                    answers={this.state.quiz[0].answers}
-                    question={this.state.quiz[0].question}
+                    answers={this.state.quiz[this.state.activeQuestion].answers}
+                    question={this.state.quiz[this.state.activeQuestion].question}
                     onAnswerClick={this.onAnswerClickHandler}
                     quizLength={this.state.quiz.length}
                     answerNumber={this.state.activeQuestion + 1}
