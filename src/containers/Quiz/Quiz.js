@@ -48,7 +48,7 @@ class Quiz extends Component {
                 }
 
                 window.clearTimeout(timeout)
-            }, 400)
+            }, 600)
 
         } else {
 
