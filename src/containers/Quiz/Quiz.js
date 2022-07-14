@@ -4,6 +4,7 @@ import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 
 class Quiz extends Component {
     state = {
+        isFinished: 0
         activeQuestion: 0,
         answerState: null,
         quiz: [
