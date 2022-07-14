@@ -4,7 +4,7 @@ import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 
 class Quiz extends Component {
     state = {
-        isFinished: 0
+        isFinished: false,
         activeQuestion: 0,
         answerState: null,
         quiz: [
@@ -51,7 +51,9 @@ class Quiz extends Component {
 
             const timeout = window.setTimeout( () => {
                 if (this.isQuizFinished()) {
-                console.log('Finished')
+                    this.setState({
+                        isFinished: true
+                    })
                 } else {
                     this.setState({
                         activeQuestion: this.state.activeQuestion + 1,
@@ -78,14 +80,19 @@ class Quiz extends Component {
             <div className={'Quiz'}>
                 <div className={'QuizWrapper'}>
                     <h1>Ответьте на все вопросы</h1>
-                    <ActiveQuiz
-                    answers={this.state.quiz[this.state.activeQuestion].answers}
-                    question={this.state.quiz[this.state.activeQuestion].question}
-                    onAnswerClick={this.onAnswerClickHandler}
-                    quizLength={this.state.quiz.length}
-                    answerNumber={this.state.activeQuestion + 1}
-                    state={this.state.answerState}
-                    />
+
+                    {
+                        this.state.isFinished
+                        ? <h1>Finished</h1>
+                        :  <ActiveQuiz
+                                answers={this.state.quiz[this.state.activeQuestion].answers}
+                                question={this.state.quiz[this.state.activeQuestion].question}
+                                onAnswerClick={this.onAnswerClickHandler}
+                                quizLength={this.state.quiz.length}
+                                answerNumber={this.state.activeQuestion + 1}
+                                state={this.state.answerState}
+                            />
+                    }
                 </div>
             </div>
         )
