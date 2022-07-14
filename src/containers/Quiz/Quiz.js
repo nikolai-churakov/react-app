@@ -33,7 +33,12 @@ class Quiz extends Component {
     }
 
     onAnswerClickHandler = answerId => {
-
+        if (this.state.answerState) {
+            const key = Object.key(this.state.answerState) [0]
+            if (this.state.answerState[key] === 'success') {
+                return
+            }
+        }
 
         const question = this.state.quiz[this.state.activeQuestion]
 
@@ -48,7 +53,8 @@ class Quiz extends Component {
                 console.log('Finished')
                 } else {
                     this.setState({
-                        activeQuestion: this.state.activeQuestion + 1
+                        activeQuestion: this.state.activeQuestion + 1,
+                        answerState: null
                     })
                 }
 
