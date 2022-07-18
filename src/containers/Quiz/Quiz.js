@@ -48,8 +48,6 @@ class Quiz extends Component {
         } else {
 
         }
-
-
     }
     render() {
         return (
