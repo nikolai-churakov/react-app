@@ -1,5 +1,7 @@
 import React from "react";
 import "./FinishedQuiz.css";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { solid, regular} from '@fortawesome/fontawesome-svg-core/import.macro'
 
 
 const FinishedQuiz = props => {
@@ -9,7 +11,7 @@ const FinishedQuiz = props => {
                <li>
                    <strong>1.</strong>
                    How are you
-                   <i className={''}></i>
+                   {/*<FontAwesomeIcon icon={solid('user-secret')} />*/}
                </li>
            </ul>
 
