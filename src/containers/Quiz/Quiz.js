@@ -77,6 +77,7 @@ class Quiz extends Component {
                     onAnswerClick={this.onAnswerClickHandler}
                     quizLength={this.state.quiz.length}
                     answerNumber={this.state.activeQuestion + 1}
+                    state={this.state.answerState}
                     />
                 </div>
             </div>
