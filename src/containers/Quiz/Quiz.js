@@ -33,11 +33,13 @@ class Quiz extends Component {
     }
 
     onAnswerClickHandler = answerId => {
-        console.log('Answer Id', answerId)
 
         const question = this.state.quiz[this.state.activeQuestion]
 
         if (question.rightAnswerId === answerId) {
+            this.setState({
+                answerState: {[answerId]: 'success'}
+            })
 
             const timeout = window.setTimeout( () => {
 
@@ -52,6 +54,9 @@ class Quiz extends Component {
             }, 1000)
 
         } else {
+            this.setState({
+                answerState: {[answerId]: 'error'}
+            })
 
         }
     }
