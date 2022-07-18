@@ -10,7 +10,12 @@ const FinishedQuiz = props => {
            <ul>
                <li>
                    <strong>1.</strong>
-                   How are you
+                   How are you <span className={'error1'}>{'\u2713'}</span>
+                   {/*<FontAwesomeIcon icon={solid('user-secret')} />*/}
+               </li>
+               <li>
+                   <strong>2.</strong>
+                   How are you <span className={'success1'}>{'\u2713'}</span>
                    {/*<FontAwesomeIcon icon={solid('user-secret')} />*/}
                </li>
            </ul>
