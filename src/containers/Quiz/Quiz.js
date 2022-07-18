@@ -5,6 +5,7 @@ import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 class Quiz extends Component {
     state = {
         activeQuestion: 0,
+        answerState: null, // { [id]: 'success 'error'}
         quiz: [
             {
                 question: 'Какого цвета небо?',
