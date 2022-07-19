@@ -5,8 +5,7 @@ const AnswerItem = props => {
     const cls = ['AnswerItem']
 
     if (props.state) {
-        console.log(props.state)
-        cls.push([props.state])
+        cls.push(props.state)
 
     }
     return (
