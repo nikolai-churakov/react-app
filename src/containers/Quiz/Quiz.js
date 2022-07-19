@@ -41,6 +41,7 @@ class Quiz extends Component {
             }
         }
 
+
         const question = this.state.quiz[this.state.activeQuestion]
 
         if (question.rightAnswerId === answerId) {
