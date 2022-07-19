@@ -77,16 +77,22 @@ class Quiz extends Component {
                 answerState: {[answerId]: 'error'},
                 results
             })
-            this.setState({
-                activeQuestion: this.state.activeQuestion + 1,
-                answerState: null
-            })
+            // я добавил фикс, при неправильном не переходил дальше
+            if(this.isQuizFinished()) {
+                this.setState({
+                    isFinished: true
+                })
+            } else {
+                this.setState({
+                    activeQuestion: this.state.activeQuestion + 1,
+                    answerState: null
+                })
+            }
         }
     }
 
     isQuizFinished() {
         return this.state.activeQuestion + 1 === this.state.quiz.length
-
     }
 
     render() {
@@ -100,7 +106,6 @@ class Quiz extends Component {
                             ? <FinishedQuiz
                                 results={this.state.results}
                                 quiz={this.state.quiz}
-
                               />
                             : <ActiveQuiz
                                 answers={this.state.quiz[this.state.activeQuestion].answers}
