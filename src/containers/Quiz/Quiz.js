@@ -47,8 +47,12 @@ class Quiz extends Component {
         const results = this.state.results
 
         if (question.rightAnswerId === answerId) {
+            if(!results[answerId]) {
+                results[answerId] = 'success'
+            }
             this.setState({
-                answerState: {[answerId]: 'success'}
+                answerState: {[answerId]: 'success'},
+                results
             })
 
             const timeout = window.setTimeout( () => {
@@ -90,6 +94,8 @@ class Quiz extends Component {
                     {
                         this.state.isFinished
                             ? <FinishedQuiz
+                                results={this.state.results}
+                                quiz={this.state.quiz}
 
                               />
                             : <ActiveQuiz
