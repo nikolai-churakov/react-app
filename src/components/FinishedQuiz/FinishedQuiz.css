@@ -18,12 +18,12 @@
 
 }
 
-.success1 {
+.success {
     color: rgba(161, 240, 69, .7);
     font-weight: bold;
 }
 
-.error1 {
+.error {
     color: rgba(240, 87, 108, .7);
     font-weight: bold;
 }

@@ -11,11 +11,14 @@ const FinishedQuiz = props => {
 
                {props.quiz.map((quizItem, index) => {
 
-                   const  cls = [
+                   const  simbol = [
                        props.results[quizItem.id] === 'error' ? '\u0058' : '\u2713',
+
+                   ]
+
+                   const  cls = [
                        props.results[quizItem.id]
                    ]
-                   console.log(props.results[quizItem.id])
 
                    return (
                        <li
@@ -23,8 +26,8 @@ const FinishedQuiz = props => {
                        >
                         <strong>{index + 1}</strong>.&nbsp;
                            <p>112</p>
-                           {/*{quizItem}*/}
-                           <span>{cls.join(' ')}</span>
+                           {quizItem.question}
+                           <span className={'error1'}>{simbol.join(' ')}</span>
 
                        </li>
                    )
