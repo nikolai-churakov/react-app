@@ -77,6 +77,10 @@ class Quiz extends Component {
                 answerState: {[answerId]: 'error'},
                 results
             })
+            this.setState({
+                activeQuestion: this.state.activeQuestion + 1,
+                answerState: null
+            })
         }
     }
 
