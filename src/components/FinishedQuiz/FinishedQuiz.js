@@ -11,10 +11,14 @@ const FinishedQuiz = props => {
 
                {props.quiz.map((quizItem, index) => {
 
+                   const done = '\u0058'
+
                    const  simbol = [
-                       props.results[quizItem.id] === 'error' ? '\u0058' : '\u2713',
+                       props.results[quizItem.id] === 'error' ? done : '\u2713',
 
                    ]
+
+
 
                    const  cls = [
                        props.results[quizItem.id]
@@ -25,27 +29,11 @@ const FinishedQuiz = props => {
                            key={index}
                        >
                         <strong>{index + 1}</strong>.&nbsp;
-                           <p>112</p>
                            {quizItem.question}
-                           <span className={'error1'}>{simbol.join(' ')}</span>
-
+                           <span className={cls.join(' ')}>{simbol.join(' ')}</span>
                        </li>
                    )
-
                })}
-
-               {/*Old Variant finished*/}
-               {/*<li>*/}
-               {/*    <strong>1.</strong>*/}
-               {/*    How are you <span className={'error1'}>{'\u0058'}</span>*/}
-               {/*    /!*<FontAwesomeIcon icon={solid('user-secret')} />*!/*/}
-               {/*</li>*/}
-               {/*<li>*/}
-               {/*    <strong>2.</strong>*/}
-               {/*    How are you <span className={'success1'}>{'\u2713'}</span>*/}
-               {/*    /!*<FontAwesomeIcon icon={solid('user-secret')} />*!/*/}
-               {/*</li>*/}
-
            </ul>
 
            <p> Правильно 4 из 10</p>
