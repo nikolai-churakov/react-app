@@ -4,6 +4,7 @@ import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
 class Quiz extends Component {
     state = {
+        results: {}, // { [id]: 'success' 'error'}
         isFinished: false,
         activeQuestion: 0,
         answerState: null, // { [id]: 'success' 'error'}
@@ -43,6 +44,7 @@ class Quiz extends Component {
 
 
         const question = this.state.quiz[this.state.activeQuestion]
+        const results = this.state.results
 
         if (question.rightAnswerId === answerId) {
             this.setState({
@@ -66,8 +68,10 @@ class Quiz extends Component {
             }, 1000)
 
         } else {
+            results[answerId] = 'error'
             this.setState({
-                answerState: {[answerId]: 'error'}
+                answerState: {[answerId]: 'error'},
+                results
             })
         }
     }
