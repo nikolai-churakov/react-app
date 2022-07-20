@@ -18,8 +18,6 @@ const FinishedQuiz = props => {
 
                    ]
 
-
-
                    const  cls = [
                        props.results[quizItem.id]
                    ]
