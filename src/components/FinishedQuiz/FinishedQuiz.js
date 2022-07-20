@@ -1,5 +1,6 @@
 import React from "react";
 import "./FinishedQuiz.css";
+import Button from "../UI/Button/Button";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { solid, regular} from '@fortawesome/fontawesome-svg-core/import.macro'
 
@@ -49,7 +50,8 @@ const FinishedQuiz = props => {
            <p> Правильно {successCount} из {props.quiz.length}</p>
 
             <div>
-                <button onClick={props.onRetry}>Повторить</button>
+                <Button onClick={props.onRetry} type="primary">Повторить</Button>
+                {/*<button onClick={props.onRetry}>Повторить</button>*/}
             </div>
         </div>
     )
