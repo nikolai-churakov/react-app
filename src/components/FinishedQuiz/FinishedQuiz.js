@@ -19,21 +19,28 @@ const FinishedQuiz = props => {
                {props.quiz.map((quizItem, index) => {
 
                    const done = '\u0058'
+                   const x = '\u2713'
 
-                   const  simbol = [
-                       props.results[quizItem.id] === 'error' ? done : '\u2713',
-                   ]
-                   const  cls = [
+                   const cls = [
                        props.results[quizItem.id]
                    ]
 
-                   return (
+                   const symbol = [
+                       props.results[quizItem.id] === 'error' ? done : x,
+                   ]
+                   if (symbol === 'error') {
+                       cls.push('finished-error')
+                   } else {
+                       cls.push('finished-success')
+                   }
+
+                       return (
                        <li
                            key={index}
                        >
                         <strong>{index + 1}</strong>.&nbsp;
                            {quizItem.question}
-                           <span className={cls.join(' ')}>{simbol.join(' ')}</span>
+                           <span className={cls.join(' ')}>{symbol.join(' ')}</span>
                        </li>
                    )
                })}
