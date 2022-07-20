@@ -28,7 +28,8 @@ const FinishedQuiz = props => {
                    const symbol = [
                        props.results[quizItem.id] === 'error' ? done : x,
                    ]
-                   if (symbol === 'error') {
+                   console.log('1', props.results[quizItem.id])
+                   if (props.results[quizItem.id] === 'error') {
                        cls.push('finished-error')
                    } else {
                        cls.push('finished-success')
