@@ -69,7 +69,7 @@ class Quiz extends Component {
                 }
 
                 window.clearTimeout(timeout)
-            }, 1000)
+            }, 500)
 
         } else {
             results[question.id] = 'error'
@@ -115,7 +115,7 @@ class Quiz extends Component {
                             ? <FinishedQuiz
                                 results={this.state.results}
                                 quiz={this.state.quiz}
-                                onRetr={this.retryHandler}
+                                onRetry={this.retryHandler}
                               />
                             : <ActiveQuiz
                                 answers={this.state.quiz[this.state.activeQuestion].answers}
