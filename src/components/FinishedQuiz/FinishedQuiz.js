@@ -35,6 +35,8 @@ const FinishedQuiz = props => {
                        cls.push('finished-success')
                    }
 
+                   debugger
+
                        return (
                        <li
                            key={index}
