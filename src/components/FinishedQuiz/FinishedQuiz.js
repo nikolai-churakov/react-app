@@ -4,6 +4,13 @@ import "./FinishedQuiz.css";
 // import { solid, regular} from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const FinishedQuiz = props => {
+    const successCount = Object.keys(props.results).reduce((total, key) => {
+        if (props.results[key] === 'success') {
+        total++
+    }
+
+        return total
+    }, 0)
 
     return (
         <div className={'FinishedQuiz'}>
@@ -15,9 +22,7 @@ const FinishedQuiz = props => {
 
                    const  simbol = [
                        props.results[quizItem.id] === 'error' ? done : '\u2713',
-
                    ]
-
                    const  cls = [
                        props.results[quizItem.id]
                    ]
@@ -34,7 +39,7 @@ const FinishedQuiz = props => {
                })}
            </ul>
 
-           <p> Правильно 4 из 10</p>
+           <p> Правильно {successCount} из {props.quiz.length}</p>
 
             <div>
                 <button>Повторить</button>
