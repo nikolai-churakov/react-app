@@ -28,14 +28,11 @@ const FinishedQuiz = props => {
                    const symbol = [
                        props.results[quizItem.id] === 'error' ? done : x,
                    ]
-                   console.log('1', props.results[quizItem.id])
                    if (props.results[quizItem.id] === 'error') {
                        cls.push('finished-error')
                    } else {
                        cls.push('finished-success')
                    }
-
-                   debugger
 
                        return (
                        <li
@@ -52,7 +49,7 @@ const FinishedQuiz = props => {
            <p> Правильно {successCount} из {props.quiz.length}</p>
 
             <div>
-                <button>Повторить</button>
+                <button onClick={props.onRetry}>Повторить</button>
             </div>
         </div>
     )
