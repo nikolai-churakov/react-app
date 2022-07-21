@@ -17,5 +17,9 @@
 }
 
 .MenuToggle.open {
-    left: 320px
+    left: 320px;
+    color: #ff8307;
+    transform: rotate(90deg);
+    font-size: 40px;
+    transition: 1s all;
 }
