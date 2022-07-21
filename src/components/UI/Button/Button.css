@@ -1,4 +1,4 @@
-.Button {
+.button {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 4px;
@@ -10,8 +10,9 @@
     font-size: 12px;
 }
 
-.button:focus {
-    outline: none;
+.button:hover {
+    color: #ff8307;
+    transition: 0.7s;
 }
 
 .button:active {
