@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./Layuot.css";
 import MenuToggle from "../../components/Navigation/MenuToggle/MenuToggle";
+import RouteHub from "../../components/Navigation/RouteHub/RouteHub";
 
 
 class Layout extends Component {
@@ -28,6 +29,12 @@ class Layout extends Component {
                 <main>
                     {this.props.children}
                 </main>
+
+                <RouteHub>
+
+
+                </RouteHub>
+
             </div>
         )
     }
