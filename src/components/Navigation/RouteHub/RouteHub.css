@@ -1,0 +1,17 @@
+.RouteHub {
+    border-radius: 2px;
+    color: black;
+    border: black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    flex-grow: 1;
+    width: 100%;
+
+}
+
+.RouteHub ul li:hover {
+    color: darkred;
+    opacity: .7;
+}
