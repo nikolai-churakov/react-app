@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import "./RouteHub.css"
-import {Route, Router} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
+// import {Route} from "react-router-dom";
+
 
 class RouteHub extends Component {
     render() {
@@ -19,11 +21,12 @@ class RouteHub extends Component {
                     </li>
                 </ul>
             </nav>
-            <Router path="/" render={() => <h1>Home</h1>} />
+            {/*<Route path="/easy" exact render={() => <h1>Home</h1>} />*/}
+            {/*<Route path="/a" exact render={() => <h1>Home</h1>} />*/}
+
         </div>
-        );
+        )
     }
 }
 
 export default RouteHub
-

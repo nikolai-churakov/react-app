@@ -32,7 +32,6 @@ class Layout extends Component {
 
                 <RouteHub>
 
-
                 </RouteHub>
 
             </div>
