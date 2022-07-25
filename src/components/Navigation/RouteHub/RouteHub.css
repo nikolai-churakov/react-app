@@ -10,3 +10,8 @@
     width: 100%;
 
 }
+
+.RouteHub ul li:hover {
+    color: darkred;
+    opacity: .7;
+}

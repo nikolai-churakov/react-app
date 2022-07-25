@@ -12,9 +12,9 @@ const RouteHub = props => {
                 <li>
                     <a href="/">Medium</a></li>
                 <li>
-                    <a href="/">Medium</a></li>Hard</li>
+                    <a href="/">Hard</a>
+                </li>
             </ul>
-
         </nav>
 
     )
