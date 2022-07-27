@@ -19,6 +19,8 @@ class Layout extends Component {
         return (
             <div className={'Layout'}>
 
+                <RouteHub/>
+
              <MenuToggle
              onToggle={this.toggleMenuHandler}
              isOpen={this.state.menu}
@@ -30,9 +32,6 @@ class Layout extends Component {
                     {this.props.children}
                 </main>
 
-                <RouteHub>
-
-                </RouteHub>
 
             </div>
         )

@@ -3,10 +3,11 @@ import "./RouteHub.css"
 // import {Route} from "react-router-dom";
 
 
-const links = [ 1, 2, 3]
+const links = [
+    1, 2, 3
+]
 
 class RouteHub extends Component {
-
 
     renderLinks() {
         return links.map((link, index) => {
