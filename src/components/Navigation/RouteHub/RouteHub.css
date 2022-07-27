@@ -1,14 +1,35 @@
 .RouteHub {
-    border-radius: 2px;
-    color: black;
-    border: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    max-width: 300px;
+    padding: 20px 10px;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-    flex-grow: 1;
-    width: 100%;
+    background: #fff;
+    z-index: 90;
+    transform: translateX(0px);
+    transition: transform .22s ease-in;
 
+}
+
+.RouteHub.close {
+    transform: translateX(-300px);
+}
+
+.RouteHub ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.RouteHub ul li {
+   margin-bottom: 15px;
+}
+
+.RouteHub ul li a {
+    margin-bottom: 15px;
 }
 
 .RouteHub ul li:hover {

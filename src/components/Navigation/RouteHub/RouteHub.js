@@ -12,7 +12,7 @@ class RouteHub extends Component {
         return links.map((link, index) => {
             return (
                 <li key={index}>
-                    Link {link}
+                   <a>Link {link}</a>
                 </li>
             )
         })
