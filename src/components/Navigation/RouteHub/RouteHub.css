@@ -30,9 +30,15 @@
 
 .RouteHub ul li a {
     margin-bottom: 15px;
+    color: #363f54;
+    font-size: 30px;
+    text-transform: none;
+    background-color: #fff;
+    position: relative;
+    padding: 0 10px 20px 10px;
+    transition: opacity .3s;
 }
 
-.RouteHub ul li:hover {
-    color: darkred;
-    opacity: .7;
+.RouteHub ul li a:hover, .active {
+    transition: opacity .7s;
 }
