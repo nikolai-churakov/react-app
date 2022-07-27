@@ -9,13 +9,15 @@ class RouteHub extends Component {
 
 
     renderLinks() {
-        return links.map((link, index) =>
-        return (
-            <li key={index}>
-                Link{link}
-            </li>
-        ))
+        return links.map((link, index) => {
+            return (
+                <li key={index}>
+                    Link {link}
+                </li>
+            )
+        })
     }
+
     render() {
 
     return (
