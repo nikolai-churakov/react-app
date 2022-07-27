@@ -3,27 +3,30 @@ import "./RouteHub.css"
 // import {Route} from "react-router-dom";
 
 
+const links = [ 1, 2, 3]
+
 class RouteHub extends Component {
+
+
+    renderLinks() {
+        return links.map((link, index) =>
+        return (
+            <li key={index}>
+                Link{link}
+            </li>
+        ))
+    }
     render() {
 
     return (
-        <div>
             <nav className={'RouteHub'}>
                 <ul>
-                    <li>
-                        <a href="/easy">Easy</a>
-                    </li>
-                    <li>
-                        <a href="/medium">Medium</a></li>
-                    <li>
-                        <a href="/hard">Hard</a>
-                    </li>
+                    {this.renderLinks() }
                 </ul>
             </nav>
-            {/*<Route path="/easy" exact render={() => <h1>Home</h1>} />*/}
-            {/*<Route path="/a" exact render={() => <h1>Home</h1>} />*/}
 
-        </div>
+            // {/*<Route path="/easy" exact render={() => <h1>Home</h1>} />*/}
+            // {/*<Route path="/a" exact render={() => <h1>Home</h1>} />*/}
         )
     }
 }
