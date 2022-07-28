@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./RouteHub.css"
+import Backdrop from '../../UI/Backdrop/Backdrop'
 // import {Route} from "react-router-dom";
 
 
@@ -28,11 +29,14 @@ class RouteHub extends Component {
         }
 
     return (
+        <React.Fragment>
             <nav className={cls.join(' ')}>
                 <ul>
                     {this.renderLinks() }
                 </ul>
             </nav>
+            { this.props.isOpen ? <Backdrop onClick={this.props.onClose}/> : null}
+        </React.Fragment>
 
             // {/*<Route path="/easy" exact render={() => <h1>Home</h1>} />*/}
             // {/*<Route path="/a" exact render={() => <h1>Home</h1>} />*/}
