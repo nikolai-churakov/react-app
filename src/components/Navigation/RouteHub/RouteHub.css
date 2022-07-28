@@ -1,17 +1,44 @@
 .RouteHub {
-    border-radius: 2px;
-    color: black;
-    border: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    max-width: 300px;
+    padding: 20px 10px;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-    flex-grow: 1;
-    width: 100%;
+    background: #fff;
+    z-index: 90;
+    transform: translateX(0px);
+    transition: transform .22s ease-in;
 
 }
 
-.RouteHub ul li:hover {
-    color: darkred;
-    opacity: .7;
+.RouteHub.close {
+    transform: translateX(-300px);
+}
+
+.RouteHub ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.RouteHub ul li {
+   margin-bottom: 15px;
+}
+
+.RouteHub ul li a {
+    color: #363f54;
+    font-size: 30px;
+    text-transform: none;
+    background-color: #fff;
+    position: relative;
+    padding: 0 10px 20px 10px;
+    transition: opacity .3s;
+}
+
+.RouteHub ul li a:hover, .active {
+    transition: opacity .7s;
+    color: #ff8307;
 }
