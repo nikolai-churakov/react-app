@@ -19,7 +19,9 @@ class Layout extends Component {
         return (
             <div className={'Layout'}>
 
-                <RouteHub/>
+                <RouteHub
+                    isOpen={this.state.menu}
+                />
 
              <MenuToggle
              onToggle={this.toggleMenuHandler}

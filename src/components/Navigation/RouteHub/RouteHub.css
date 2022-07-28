@@ -40,4 +40,5 @@
 
 .RouteHub ul li a:hover, .active {
     transition: opacity .7s;
+    color: #ff8307;
 }

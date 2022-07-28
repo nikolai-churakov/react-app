@@ -21,8 +21,14 @@ class RouteHub extends Component {
 
     render() {
 
+        const cls = ['RouteHub']
+
+        if (!this.props.isOpen) {
+            cls.push('close')
+        }
+
     return (
-            <nav className={'RouteHub'}>
+            <nav className={cls.join(' ')}>
                 <ul>
                     {this.renderLinks() }
                 </ul>
