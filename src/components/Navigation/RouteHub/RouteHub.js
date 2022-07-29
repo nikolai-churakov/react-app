@@ -2,9 +2,7 @@ import React, {Component} from "react";
 import "./RouteHub.css"
 import Backdrop from '../../UI/Backdrop/Backdrop'
 
-const links = [
-    1, 2, 3
-]
+const links = [ 1, 2, 3 ]
 
 class RouteHub extends Component {
 
@@ -12,7 +10,7 @@ class RouteHub extends Component {
         return links.map((link, index) => {
             return (
                 <li key={index}>
-                   <a>Link {link}</a>
+                   <a href='/' >Link {link} </a>
                 </li>
             )
         })
