@@ -30,7 +30,8 @@
 
 .RouteHub ul li a {
     color: #363f54;
-    font-size: 30px;
+    text-decoration: none;
+    font-size: 20px;
     text-transform: none;
     background-color: #fff;
     position: relative;

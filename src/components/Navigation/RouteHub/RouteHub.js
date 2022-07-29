@@ -1,8 +1,13 @@
 import React, {Component} from "react";
 import "./RouteHub.css"
+import {NavLink} from "react-router-dom";
 import Backdrop from '../../UI/Backdrop/Backdrop'
 
-const links = [ 1, 2, 3 ]
+const links = [
+    {to: '/', label: 'Список', exact: true},
+    {to: '/auth', label: 'Авторизация', exact: true},
+    {to: '/quiz-creator', label: 'Создать текст', exact: true}
+]
 
 class RouteHub extends Component {
 
@@ -10,7 +15,13 @@ class RouteHub extends Component {
         return links.map((link, index) => {
             return (
                 <li key={index}>
-                   <a href='/' >Link {link} </a>
+                    <NavLink
+                        to={link.to}
+                        exact={link.exact}
+                        activeClassName={'active'}
+                    >
+                        {link.label}
+                    </NavLink>
                 </li>
             )
         })
