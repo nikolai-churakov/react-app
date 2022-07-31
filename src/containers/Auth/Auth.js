@@ -59,6 +59,7 @@ event.preventDefault()
 
         if (validation.email) {
 
+
         }
 
         if (validation.minLength) {
