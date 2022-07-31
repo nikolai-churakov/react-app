@@ -21,20 +21,20 @@ event.preventDefault()
                 <div>
                     <h1>Авторизация</h1>
 
-                    <form onSubmit={this.submitHandler}>
+                    <form onSubmit={this.submitHandler} className='form'>
                         <input type="text"/>
                         <input type="text"/>
-                        <button
-                            type="success"
+                        <Button
+                            type="repeat"
                             onClick={this.loginHandler}
                         >
-                            Войти</button>
+                            Войти</Button>
 
-                        <button
+                        <Button
                             type="primary"
                             onClick={this.registerHandler}
                         >
-                            Войти</button>
+                            Регистрация</Button>
                     </form>
                 </div>
 
