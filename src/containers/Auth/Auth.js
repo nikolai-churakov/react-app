@@ -46,8 +46,13 @@ export default class Auth extends Component {
 event.preventDefault()
     }
 
+    onChangeHandler = (event, controlName) => {
+        console.log(`${controlName}: `, event.target.value)
+
+    }
+
     renderInputs() {
-        return Object.key(this.state.formControls).map((controlName, index ) => {
+        return Object.keys(this.state.formControls).map((controlName, index ) => {
             const control = this.state.formControls[controlName]
             return (
                 <Input
@@ -59,6 +64,7 @@ event.preventDefault()
                     label={control.label}
                     errorMessage={control.errorMessage}
                     shouldValidate={!!control.validation}
+                    onChange={event => this.onChangeHandler(event, controlName)}
                 />
             )
         })
@@ -70,16 +76,9 @@ event.preventDefault()
                 <div>
                     <h1>Авторизация</h1>
 
-                    <form onSubmit={this.submitHandler} className='form'>
+                    <form onSubmit={this.submitHandler} className='AuthForm'>
 
                         { this.renderInputs() }
-
-
-                        <Input label="Email"/>
-
-                        <Input label="Пароль"
-                        errorMessage={'test'}
-                        />
 
                         <Button
                             type="repeat"
