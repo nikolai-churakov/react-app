@@ -4,12 +4,16 @@ import {NavLink} from "react-router-dom";
 import Backdrop from '../../UI/Backdrop/Backdrop'
 
 const links = [
-    {to: '/', label: 'Список', exact: true},
+    {to: '/', label: 'Тесты', exact: true},
     {to: '/auth', label: 'Авторизация', exact: true},
-    {to: '/quiz-creator', label: 'Создать текст', exact: true}
+    {to: '/quiz-creator', label: 'Создать тест', exact: true}
 ]
 
 class RouteHub extends Component {
+
+    clickHandler = () => {
+        this.props.onClose()
+    }
 
     renderLinks() {
         return links.map((link, index) => {
@@ -19,6 +23,7 @@ class RouteHub extends Component {
                         to={link.to}
                         exact={link.exact}
                         activeClassName={'active'}
+                        onClick={this.clickHandler}
                     >
                         {link.label}
                     </NavLink>
