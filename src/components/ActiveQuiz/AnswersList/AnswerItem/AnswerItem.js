@@ -6,8 +6,8 @@ const AnswerItem = props => {
 
     if (props.state) {
         cls.push(props.state)
-
     }
+
     return (
         <li
             className={cls.join(' ')}

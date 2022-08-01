@@ -42,7 +42,6 @@ class Quiz extends Component {
             }
         }
 
-
         const question = this.state.quiz[this.state.activeQuestion]
         const results = this.state.results
 
@@ -72,24 +71,32 @@ class Quiz extends Component {
             }, 500)
 
         } else {
-            results[question.id] = 'error'
+            results[question.id] = 'error';
+
             this.setState({
                 answerState: {[answerId]: 'error'},
                 results
             })
-            // я добавил фикс, при неправильном не переходил дальше
-            if(this.isQuizFinished()) {
-                this.setState({
-                    isFinished: true
-                })
-            } else {
-                this.setState({
-                    activeQuestion: this.state.activeQuestion + 1,
-                    answerState: null
-                })
-            }
+
+            const timeoutError = window.setTimeout( () => {
+
+                if(this.isQuizFinished()) {
+                    this.setState({
+                        isFinished: true
+                    })
+                } else {
+                    this.setState({
+                        activeQuestion: this.state.activeQuestion + 1,
+                        answerState: null
+                    })
+                }
+
+                window.clearTimeout(timeoutError)
+            }, 300)
         }
     }
+
+
 
     isQuizFinished() {
         return this.state.activeQuestion + 1 === this.state.quiz.length
@@ -102,6 +109,10 @@ class Quiz extends Component {
             isFinished: false,
             results: {}
         })
+    }
+
+    componentDidMount() {
+        console.log('Quiz ID=', this.props.match.params.id)
     }
 
     render() {

@@ -1,8 +1,7 @@
 import React from "react";
 import "./FinishedQuiz.css";
 import Button from "../UI/Button/Button";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { solid, regular} from '@fortawesome/fontawesome-svg-core/import.macro'
+import {Link} from "react-router-dom";
 
 const FinishedQuiz = props => {
     const successCount = Object.keys(props.results).reduce((total, key) => {
@@ -51,8 +50,9 @@ const FinishedQuiz = props => {
 
             <div>
                 <Button onClick={props.onRetry} type="primary">Повторить</Button>
-                <Button type="success">Перейти в список тестов</Button>
-                {/*<button onClick={props.onRetry}>Повторить</button>*/}
+                <Link to="/">
+                    <Button type="repeat">Перейти в список тестов</Button>
+                </Link>
             </div>
         </div>
     )
