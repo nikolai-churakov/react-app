@@ -74,7 +74,6 @@ event.preventDefault()
         return isValid
     }
     onChangeHandler = (event, controlName) => {
-        console.log(`${controlName}: `, event.target.value)
 
         const formControls = {...this.state.formControls}
         const control = {...formControls[controlName]}
