@@ -3,7 +3,7 @@ import './QuizCreator.css'
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
 import {createControl, validate, validateForm} from '../../form/formFramework'
-import Auxillary from '../../hoc/Auxillary/Auxillary'
+import Auxilary from '../../hoc/Auxilary/Auxilary'
 import Select from "../../components/UI/Select/Select";
 
 function createOptionControl(number) {
@@ -18,12 +18,12 @@ function createFormControl() {
     return {
         question: createControl({
             label: 'Введите вопрос',
-            errorMessage: 'Значение не может быть пустым'
+            errorMessage: 'Вопрос не может быть пустым'
         }, {required: true}),
         option1: createOptionControl(1),
         option2: createOptionControl(2),
         option3: createOptionControl(3),
-        option4: createOptionControl(4),
+        option4: createOptionControl(4)
     }
 }
 
@@ -31,25 +31,22 @@ export default class QuizCreator extends Component {
 
     state = {
         quiz: [],
+        formControls: createFormControl(),
         isFormValid: false,
         rightAnswerId: 1,
-        formControls: createFormControl()
     }
 
     submitHandler = event => {
         event.preventDefault()
     }
 
-    createQuestionHandler = () => {
 
-    }
-
-    addQuestionHandler = () => {
-
+    addQuestionHandler = event => {
+        event.preventDefault()
     }
 
     createQuizHandler = () => {
-
+    console.log('createQuizHandler')
     }
 
     changeHandler = (value, controlName) => {
@@ -73,7 +70,7 @@ export default class QuizCreator extends Component {
         return Object.keys(this.state.formControls).map((controlName, index) => {
             const control = this.state.formControls[controlName]
             return (
-                <Auxillary key={controlName+index}>
+                <Auxilary key={controlName+index}>
                     <Input
                         label={control.label}
                         value={control.value}
@@ -84,7 +81,7 @@ export default class QuizCreator extends Component {
                         onChange={event => this.changeHandler(event.target.value, createControl)}
                     />
                     { index === 0 ? <hr /> : null }
-                </Auxillary>
+                </Auxilary>
             )
         })
     }
@@ -120,12 +117,15 @@ export default class QuizCreator extends Component {
                         <Button
                             type='primary'
                             onClick={this.addQuestionHandler}
+                            disabled={!this.state.isFormValid}
                         >
                             Добавить вопрос
                         </Button>
                         <Button
                             type='repeat'
                             onClick={this.createQuestionHandler}
+                            disabled={this.state.quiz.length === 0}
+                        >
                         >
                             Создать тест
                         </Button>
