@@ -63,7 +63,6 @@ export default class QuizCreator extends Component {
             formControls,
             isFormValid: validateForm(formControls)
         })
-
     }
 
     renderControls() {
