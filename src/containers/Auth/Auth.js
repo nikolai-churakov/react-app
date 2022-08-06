@@ -104,7 +104,7 @@ event.preventDefault()
                     touched={control.touched}
                     label={control.label}
                     errorMessage={control.errorMessage}
-                    shouldValidate={!!control.validation}
+                    shouldValidate={!control.validation}
                     onChange={event => this.onChangeHandler(event, controlName)}
                 />
             )
@@ -125,7 +125,6 @@ event.preventDefault()
                             type="repeat"
                             onClick={this.loginHandler}
                             disabled={!this.state.isFormValid}
-
                         >
                             Войти</Button>
 
@@ -133,11 +132,10 @@ event.preventDefault()
                             type="primary"
                             onClick={this.registerHandler}
                             disabled={!this.state.isFormValid}
-                        >
+                            >
                             Регистрация</Button>
                     </form>
                 </div>
-
             </div>
         )
     }
