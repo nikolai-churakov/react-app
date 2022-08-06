@@ -42,10 +42,38 @@ export default class QuizCreator extends Component {
 
     addQuestionHandler = event => {
         event.preventDefault()
+
+        const quiz = this.state.quiz.concat()
+        const index = quiz.length + 1
+
+        const { question, option1, option2, option3, option4 } = this.state.formControls
+
+        const questionItem = {
+            question: this.state.formControls.question.valid,
+            id: index,
+            rightAnswerId: this.state.rightAnswerId,
+            answer: [
+                {text: option1.value, id: option1.id},
+                {text: option2.value, id: option2.id},
+                {text: option3.value, id: option3.id},
+                {text: option4.value, id: option4.id}
+            ]
+        }
+
+        quiz.push(questionItem)
+
+        this.setState({
+            quiz,
+            formControls: createFormControl(),
+            isFormValid: false,
+            rightAnswerId: 1,
+        })
     }
 
-    createQuizHandler = () => {
-    console.log('createQuizHandler')
+    createQuizHandler = event => {
+    event.preventDefault()
+
+        console.log(this.state.quiz)
     }
 
     changeHandler = (value, controlName) => {
@@ -121,7 +149,7 @@ export default class QuizCreator extends Component {
                         </Button>
                         <Button
                             type='repeat'
-                            onClick={this.createQuestionHandler}
+                            onClick={this.createQuizHandler}
                             disabled={this.state.quiz.length === 0}
                         >
                             Создать тест
