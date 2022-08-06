@@ -81,6 +81,7 @@ export default class QuizCreator extends Component {
         console.log(e)
         }
 
+
         // axios.post('https://react-quiz-ee100-default-rtdb.europe-west1.firebasedatabase.app/quizes.json', this.state.quiz)
         //     .then(response => {
         //         console.log(response)
