@@ -76,7 +76,7 @@ export default class QuizCreator extends Component {
                         shouldValidate={!!control.validation}
                         touched={control.touched}
                         errorMessage={control.errorMessage}
-                        onChange={event => this.changeHandler(event.target.value, createControl)}
+                        onChange={event => this.changeHandler(event.target.value, controlName)}
                     />
                     { index === 0 ? <hr /> : null }
                 </Auxilary>
