@@ -40,7 +40,6 @@ export default class QuizCreator extends Component {
         event.preventDefault()
     }
 
-
     addQuestionHandler = event => {
         event.preventDefault()
     }
@@ -124,7 +123,6 @@ export default class QuizCreator extends Component {
                             type='repeat'
                             onClick={this.createQuestionHandler}
                             disabled={this.state.quiz.length === 0}
-                        >
                         >
                             Создать тест
                         </Button>
