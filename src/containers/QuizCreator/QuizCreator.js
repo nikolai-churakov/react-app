@@ -34,7 +34,7 @@ export default class QuizCreator extends Component {
         quiz: [],
         formControls: createFormControl(),
         isFormValid: false,
-        rightAnswerId: 1,
+        rightAnswerId: 33,
     }
 
     submitHandler = event => {
@@ -75,8 +75,14 @@ export default class QuizCreator extends Component {
     event.preventDefault()
 
         try {
-            const response = await axios.post('https://react-quiz-ee100-default-rtdb.europe-west1.firebasedatabase.app/quizes.json', this.state.quiz)
-            console.log(response.data)
+            await axios.post('https://react-quiz-ee100-default-rtdb.europe-west1.firebasedatabase.app/quizes.json', this.state.quiz)
+            this.setState({
+                quiz: [],
+                isFormValid: false,
+                rightAnswerId: 1,
+                formControls: createFormControl()
+
+            })
         }   catch (e) {
         console.log(e)
         }
@@ -133,9 +139,9 @@ export default class QuizCreator extends Component {
 
     render() {
         const select = <Select
-            lebel="Выберите правильный ответ"
+            label="Выберите правильный ответ"
             value={this.state.rightAnswerId}
-            onCange={this.selectChangeHandler}
+            onChange={this.selectChangeHandler}
             options={[
                     {text: 1, value: 1},
                     {text: 2, value: 2},
@@ -153,6 +159,7 @@ export default class QuizCreator extends Component {
                         { this.renderControls() }
 
                         { select }
+
                         <Button
                             type='primary'
                             onClick={this.addQuestionHandler}
