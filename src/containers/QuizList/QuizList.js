@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import "./QuizList.css"
 import NavLink from "react-router-dom/NavLink";
-import axios from "axios";
 import Loader from "../../components/UI/Loader/Loader";
+import axios from "axios";
 
 export default class QuizList extends Component {
 
@@ -61,11 +61,10 @@ export default class QuizList extends Component {
             <div className='QuizList'>
                 <div>
                     <h1>Список тестов</h1>
-                    <Loader />
 
                     {
                         this.state.loading
-                            ? <Loader />
+                            ? <Loader/>
                             : <ul>
                                 {this.renderQuizes()}
                             </ul>
