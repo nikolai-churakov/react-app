@@ -34,7 +34,7 @@ export default class QuizList extends Component {
 
     async componentDidMount() {
         try {
-            const response = await  axios.get('https://react-quiz-ee100-default-rtdb.europe-west1.firebasedatabase.app/quiz.json')
+            const response = await  axios.get('https://react-quiz-ee100-default-rtdb.europe-west1.firebasedatabase.app/quizes.json')
             console.log(response.data)
 
             const quizes = []
