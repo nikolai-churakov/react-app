@@ -47,7 +47,8 @@ export default class QuizList extends Component {
             })
 
             this.setState({
-                quizes, loading: false
+                quizes,
+                loading: false
             })
 
         } catch (e) {
@@ -60,10 +61,11 @@ export default class QuizList extends Component {
             <div className='QuizList'>
                 <div>
                     <h1>Список тестов</h1>
+                    <Loader />
 
                     {
                         this.state.loading
-                            ? <Loader/>
+                            ? <Loader />
                             : <ul>
                                 {this.renderQuizes()}
                             </ul>
