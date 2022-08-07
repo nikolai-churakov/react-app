@@ -40,8 +40,7 @@ export default class QuizList extends Component {
             })
 
             this.setState({
-                quizes,
-                loading: false
+                quizes, loading: false
             })
 
         } catch (e) {
