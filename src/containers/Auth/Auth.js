@@ -50,14 +50,13 @@ export default class Auth extends Component {
         } catch (e) {
             console.log(e)
         }
-
-
 }
+
     registerHandler = async () => {
         const authData = {
             email: this.state.formControls.email.value,
             password: this.state.formControls.password.value,
-            returnSecureToken: true,
+            returnSecureToken: true
         }
         try {
         const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[AIzaSyByFMWI3BS4B1Df29-KUApdSAfIznlSMIU]', authData)
