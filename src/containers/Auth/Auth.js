@@ -42,7 +42,7 @@ export default class Auth extends Component {
 
 }
     registerHandler = async () => {
-        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]')
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[AIzaSyByFMWI3BS4B1Df29-KUApdSAfIznlSMIU]')
 
 }
 
