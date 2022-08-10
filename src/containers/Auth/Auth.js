@@ -38,6 +38,7 @@ export default class Auth extends Component {
         }
     }
 
+
     loginHandler = async () => {
         const authData = {
             email: this.state.formControls.email.value,
