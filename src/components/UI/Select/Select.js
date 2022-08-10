@@ -6,7 +6,7 @@ const Select = props => {
 
     return (
         <div className={'Select'}>
-            <label htmlFor=""></label>
+            <label htmlFor={htmlFor}>{props.label}</label>
             <select
                 id={htmlFor}
                 value={props.value}
@@ -17,11 +17,12 @@ const Select = props => {
                         <option
                             value={option.value}
                             key={option.value + index}
-                            >
+                        >
                             {option.text}
                         </option>
                     )
-                }) }
+                })
+                }
             </select>
         </div>
     )
