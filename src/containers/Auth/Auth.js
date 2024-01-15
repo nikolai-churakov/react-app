@@ -14,7 +14,7 @@ export default class Auth extends Component {
                 value: '',
                 type: 'email',
                 label: 'Email',
-                errorMessage: 'Введите корректный email',
+                errorMessage: 'Введите корректный Email',
                 valid: false,
                 touched: false,
                 validation: {
